@@ -29,9 +29,9 @@
 #include <iostream>
 
 
-struct ComparsionDistance
+struct ComparisionDistance
 {
-    ComparsionDistance(const s32 &index) : center(index)
+    ComparisionDistance(const s32 &index) : center(index)
     {
     }
 
@@ -255,7 +255,7 @@ void Maps::GetAroundIndexes(s32 center, int dist, bool sort, Maps::Indexes &resu
         }
 
     if (sort)
-        std::sort(results.begin(), results.end(), ComparsionDistance(center));
+        std::sort(results.begin(), results.end(), ComparisionDistance(center));
 
     return;
 }
@@ -374,7 +374,7 @@ Maps::Indexes Maps::GetObjectPositions(int obj, bool check_hero)
 Maps::Indexes Maps::GetObjectPositions(s32 center, int obj, bool check_hero)
 {
     Indexes results = GetObjectPositions(obj, check_hero);
-    sort(results.begin(), results.end(), ComparsionDistance(center));
+    sort(results.begin(), results.end(), ComparisionDistance(center));
     return results;
 }
 
